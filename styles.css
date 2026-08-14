@@ -118,12 +118,16 @@ button, input, textarea { font: inherit; }
 .work-gallery { margin-top: 92px; display: grid; grid-template-columns: 1.25fr .75fr; grid-template-rows: 245px 245px; gap: 14px; }
 .work-gallery figure { margin: 0; min-width: 0; position: relative; overflow: hidden; background: #dfe4e5; box-shadow: var(--shadow-sm); transition: transform .35s ease, box-shadow .35s ease; }
 .work-gallery figure:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); z-index: 1; }
+.work-gallery figure > a { height: 100%; display: block; }
+.work-gallery figure > a:focus-visible { outline: 3px solid var(--blue); outline-offset: -3px; }
 .work-gallery .gallery-large { grid-row: span 2; }
 .work-gallery img { height: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.2,.6,.2,1); }
 .work-gallery figure:hover img { transform: scale(1.025); }
 .work-gallery figcaption { position: absolute; inset: auto 0 0; padding: 42px 24px 22px; display: grid; gap: 7px; color: #fff; background: linear-gradient(transparent, rgba(10,24,32,.82)); }
+.work-gallery figcaption::after { content: "↗"; position: absolute; right: 24px; bottom: 22px; color: #fff; font-size: 18px; transform: translate(-5px,5px); opacity: 0; transition: opacity .25s ease, transform .25s ease; }
+.work-gallery figure:hover figcaption::after, .work-gallery figure:focus-within figcaption::after { opacity: 1; transform: none; }
 .work-gallery figcaption span { color: #9cc9ff; }
-.work-gallery figcaption b { font-size: 15px; line-height: 1.35; }
+.work-gallery figcaption b { padding-right: 32px; font-size: 15px; line-height: 1.35; }
 
 .process { padding: 126px 0; background: radial-gradient(circle at 9% 16%,rgba(18,105,232,.22),transparent 27%),var(--ink); color: #fff; position: relative; overflow: clip; }
 .process::after { content: ""; position: absolute; width: 300px; height: 300px; right: -150px; bottom: 18%; border: 1px solid rgba(255,255,255,.1); border-radius: 50%; animation: ring-drift 10s ease-in-out infinite alternate-reverse; }
