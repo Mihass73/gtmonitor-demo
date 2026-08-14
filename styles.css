@@ -253,7 +253,14 @@ button, input, textarea { font: inherit; }
 .contact-card small { color: var(--blue); font-size: 9px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
 .contact-card a, .contact-card address { margin: 0; font-size: clamp(18px,2vw,26px); line-height: 1.35; font-style: normal; font-weight: 600; }
 .contact-page .contact-form { box-shadow: 0 22px 70px rgba(18,33,42,.12); border: 1px solid var(--line); }
-.contact-page-title { margin: 0 0 48px; font-size: clamp(38px,5vw,66px); line-height: 1.02; letter-spacing: -.04em; }
+.contact-page-title {
+  max-width: 540px;
+  margin: 0 0 48px;
+  font-size: clamp(38px,4.6vw,62px);
+  line-height: 1.1;
+  letter-spacing: -.018em;
+  text-wrap: balance;
+}
 
 .cta-band { padding: 84px 0; background: radial-gradient(circle at 82% 10%,rgba(255,255,255,.15),transparent 26%),linear-gradient(135deg,#1269e8,#0752c1); color: #fff; position: relative; overflow: clip; }
 .cta-band::before { content: ""; position: absolute; width: 240px; height: 240px; right: 4%; bottom: -170px; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; box-shadow: 0 0 0 38px rgba(255,255,255,.03); }
