@@ -99,7 +99,7 @@ button, input, textarea { font: inherit; }
 .section-heading { display: grid; grid-template-columns: 140px minmax(0,1fr); gap: 48px; margin-bottom: 68px; }
 .section-heading > div > p { max-width: 590px; margin: 22px 0 0; color: var(--muted); font-size: 16px; line-height: 1.6; }
 .services-showcase { display: grid; grid-template-columns: .88fr 1.12fr; gap: clamp(46px, 6vw, 82px); align-items: start; }
-.service-preview { margin: 0; height: min(670px, calc(100vh - 120px)); min-height: 520px; position: sticky; top: 106px; overflow: hidden; background: #e8eaeb; box-shadow: var(--shadow-md); }
+.service-preview { margin: 0; height: 688px; min-height: 688px; position: sticky; top: 88px; overflow: hidden; background: #e8eaeb; box-shadow: var(--shadow-md); }
 .service-preview::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(9,25,35,.72)); pointer-events: none; }
 .service-preview img { height: 100%; object-fit: cover; transition: opacity .28s ease, transform .7s cubic-bezier(.2,.6,.2,1); }
 .service-preview.is-changing img { opacity: .3; transform: scale(1.02); }
@@ -295,6 +295,15 @@ button, input, textarea { font: inherit; }
 @keyframes ambient-pulse { from { opacity: .7; transform: scale(.94); } to { opacity: 1; transform: scale(1.08) translate(-12px,10px); } }
 @keyframes ring-drift { from { transform: translate3d(0,0,0) rotate(0deg); } to { transform: translate3d(18px,-16px,0) rotate(10deg); } }
 @keyframes details-open { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+
+@media (min-width: 761px) {
+  .service-row { min-height: 86px; padding: 16px 10px 16px 0; align-content: center; }
+  .service-row h3 { padding-right: 32px; font-size: clamp(18px,1.8vw,24px); }
+  .service-row p { display: none; }
+  .service-row .service-number { padding-top: 2px; }
+  .service-row::after { top: 50%; transform: translate(-6px,-40%); }
+  .service-row:hover::after, .service-row:focus-visible::after, .service-row.is-active::after { transform: translateY(-50%); }
+}
 
 @media (max-width: 900px) {
   :root { --shell: calc(100% - 40px); }
